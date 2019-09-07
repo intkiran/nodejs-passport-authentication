@@ -1,0 +1,28 @@
+<!--COMMENT NEW-->
+
+<% include ../partials/header %>
+
+<section class="newcommentpage">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h1>Add New Comment to: <%= blogpost.name %></h1>
+            </div>
+        </div>    
+        <form class="newcommentform" action="/blogposts/<%= blogpost._id %>/comments" method="POST">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <textarea rows="10" col="50" class="form-control" type="text" name="comment[text]"> </textarea>
+                </div>
+            </div>    
+            <div class="row newcommentbuttons">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <button class="btn btn-md btn-primary">Submit!</button>
+                    <a class="btn btn-md btn-outline-primary" href="/blogposts/<%= blogpost._id %>">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<% include ../partials/footer %>

@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<section class="loginpage">
+  <div class="container">
+    <h1>Invite New User!</h1>
+    <form action="/send" method="post">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          placeholder="name"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          name="username"
+          placeholder="email"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" value="Login!">
+        Submit
+      </button>
+    </form>
+  </div>
+</section>
+<% include partials/footer %>

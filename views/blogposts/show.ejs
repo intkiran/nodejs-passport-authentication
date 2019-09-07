@@ -1,0 +1,57 @@
+<!--BLOGPOST SHOW-->
+
+<% include ../partials/header %>
+
+<section class="showblogpostpage">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h2><a><%=blogpost.name%></a></h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <img class="mx-auto d-block" src ="<%=blogpost.image%>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <p><%- blogpost.description %></p>
+                <% if(currentUser && blogpost.author.id.equals(currentUser._id)){ %>
+                    <a class="btn btn-xs btn-warning" href="/blogposts/<%= blogpost._id%>/edit">Edit</a>
+                    <form class="delete-form" action ="/blogposts/<%= blogpost._id %>?_method=DELETE" method="POST">
+                        <button role="button" class="btn btn-xs btn-danger">Delete</button>
+                    </form>
+                <% } %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <a class = "btn btn-md btn-success" href="/blogposts/<%= blogpost._id %>/comments/new">Add Comment</a>
+                <a class="btn btn-md btn-primary" href="/blogposts">Back</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <% blogpost.comments.forEach(function(comment){ %>
+                    <hr>
+                    <p><%= comment.text %></p>
+                    <span class="commentbuttons">Posted by <strong><%= comment.author.username %></strong> on: <strong><%= comment.created.toDateString() %></span></strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 commentbuttons">
+                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                    <a class="btn btn-xs btn-warning" href="/blogposts/<%= blogpost._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                    <form class="delete-form" action="/blogposts/<%= blogpost._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                        <button role="button"  class="btn btn-xs btn-danger" value="Delete">Delete</button>
+                    </form>
+                    <% } %>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include ../partials/footer %>

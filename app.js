@@ -1,41 +1,78 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+//----------------REQUIRE PACKAGES--------------------
+var express = require("express"),
+  app = express(),
+  bodyParser = require("body-parser"),
+  mongoose = require("mongoose"),
+  flash = require("connect-flash"),
+  passport = require("passport"),
+  LocalStrategy = require("passport-local"),
+  methodOverride = require("method-override"),
+  Blogpost = require("./models/blogpost"),
+  Comment = require("./models/comment"),
+  User = require("./models/user"),
+  seedDB = require("./seeds"),
+  //Contact form
+  nodemailer = require("nodemailer"),
+  config = require("./config.js");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//----------------REQUIRE ROUTES--------------------
+var commentRoutes = require("./routes/comments"),
+  blogpostRoutes = require("./routes/blogposts"),
+  indexRoutes = require("./routes/index");
 
-var app = express();
+//----------------DATABASE CONNECTION--------------------
+if (process.env.NODE_ENV === "production") {
+  //Production DB (mlab)
+  var mlabconnection = config.mlabconnection;
+  mongoose.connect(mlabconnection, { useMongoClient: true });
+} else {
+  //Local DB
+  mongoose.connect("mongodb://localhost/portfolio", { useMongoClient: true });
+}
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+mongoose.Promise = global.Promise;
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+//----------------USE PACKAGES--------------------
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(bodyParser.urlencoded({ extended: true }));
+//Contact page - middleware
+app.use(bodyParser.json());
+app.set("view engine", "ejs");
+//Static link to public directory which contains all images, CSS etc.
+app.use(express.static(__dirname + "/public"));
+//Treats POST requests as PUT
+app.use(methodOverride("_method"));
+app.use(flash());
 
-// catch 404 and forward to error handler
+//seedDB();
+
+//----------------PASSPORT CONFIG--------------------
+app.use(
+  require("express-session")({
+    secret: "THIS IS USED TO ENCODE",
+    resave: false,
+    saveUninitialized: false
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.locals.currentUser = req.user;
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
+  next();
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+//----------------USE ROUTES--------------------
+app.use(indexRoutes);
+app.use(blogpostRoutes);
+app.use(commentRoutes);
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+//--------------------LISTENER--------------------
+app.listen("8080", process.env.IP, function() {
+  console.log("Server has started");
 });
-
-module.exports = app;

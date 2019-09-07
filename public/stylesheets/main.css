@@ -1,0 +1,810 @@
+/*CSS Debug Ghost*/
+/** {*/
+/*  background: #000 !important;*/
+/*  color: #0f0 !important;*/
+/*  outline: solid #f00 1px !important;*/
+/*}*/
+
+html{
+  /*Footer*/
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  background-color: #fff;
+  /*color: #444;*/
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 11px;
+  /*Footer*/
+  margin-bottom: 60px;
+}
+
+
+p {
+  text-align: justify;
+}
+
+.headerunderline{
+  background: #555;
+  width: 70px;
+  height: 4px;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+.navbarmargin{
+  margin-left: auto;
+}
+.headerstyle{
+    display: block;
+    height: 2px;
+    background-color: #337AB7;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.greybackground{
+  background-color: #f4f4f4;
+}
+
+.z-index:hover{
+  z-index: 1;
+}
+
+.nopadding{
+  padding: 0;
+}
+
+
+/*----Animations----*/
+.animate-wp-1, .animate-wp-2, .animate-wp-3, .animate-wp-4, .animate-wp-5, .animate-wp-6, .animate-wp-7{
+    opacity: 0;
+    animation-duration: 4s;
+}
+.animate-wp-6, .animate-wp-7, .animate-wp-8, .animate-wp-9, .animate-wp-10, .animate-wp-11, .animate-wp-12, .animate-wp-13, .animate-wp-14, .animate-wp-15, .animate-wp-16, .animate-wp-17, .animate-wp-18, .animate-wp-19, .animate-wp-20, .animate-wp-21, .animate-wp-22, .animate-wp-23, .animate-wp-24, .animate-wp-25, .animate-wp-26, .animate-wp-27, .animate-wp-28, .animate-wp-29, .animate-wp-30, .animate-wp-31, .animate-wp-32{
+    opacity: 0;
+    animation-duration: 1s;
+}
+.animate-wp-row1p1, .animate-wp-row2p1 {
+    opacity: 0;
+    animation-duration: 600ms;
+}
+.animate-wp-row1p2, .animate-wp-row2p2 {
+    opacity: 0;
+    animation-duration: 700ms;
+}
+.animate-wp-row1p3, .animate-wp-row2p3 {
+    opacity: 0;
+    animation-duration: 800ms;
+}
+.animate-wp-row1p4, .animate-wp-row2p4 {
+    opacity: 0;
+    animation-duration: 800ms;
+}
+
+.animate-wp-1.animated, .animate-wp-2.animated, .animate-wp-3.animated, .animate-wp-4.animated, .animate-wp-5.animated, .animate-wp-6.animated, .animate-wp-7.animated, .animate-wp-8.animated, .animate-wp-9.animated, .animate-wp-10.animated, .animate-wp-11.animated, .animate-wp-12.animated, .animate-wp-13.animated, .animate-wp-14.animated, .animate-wp-15.animated, .animate-wp-16.animated, .animate-wp-17.animated, .animate-wp-18.animated, .animate-wp-19.animated, .animate-wp-20.animated, .animate-wp-21.animated, .animate-wp-22.animated, .animate-wp-23.animated, .animate-wp-24.animated, .animate-wp-25.animated, .animate-wp-26.animated, .animate-wp-27.animated, .animate-wp-28.animated, .animate-wp-29.animated, .animate-wp-30.animated, .animate-wp-31.animated, .animate-wp-32.animated {
+    opacity: 1;
+}
+
+
+
+/*-----------------------NAV BAR-----------------------*/
+.navbar{
+  /*padding: see @media queries;*/
+}
+
+.navbar-brand{
+  margin-right: 5px;
+}
+
+.bg-muted{
+  background-color: #fff;
+}
+
+i {
+  font-size: 120%;
+  padding: 0 5px 0 4px;
+}
+
+.logostyle{
+  /*font-size: see @media queries;*/
+  /*color: rgba(0,0,0,.5);*/
+  color: white;
+}
+
+.logostyle:hover{
+  color: #337AB7;
+}
+
+.navbarcolored{
+  background-color: #202020;
+}
+
+.navbar li a {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  letter-spacing: 2px;
+  /*color: rgba(0,0,0,.5);*/
+  color: white;
+}
+
+.navbar li a:hover, .navbar li a:active  {
+  /*border-color: #337AB7;*/
+  /*color: #337AB7;*/
+  border-color: white;
+  color: white;
+  font-weight: 600;
+}
+
+.navbar .navbariconstyle li a:hover, .navbar .navbariconstyle li a:active  {
+  border-color: transparent;
+}
+.fas.fa-bars {
+  color:white;
+}
+.fas.fa-bars:hover {
+  color: #337AB7;
+}
+
+#welcomemessage{
+  color: white;
+  font-size: 12px;
+}
+
+#welcomemessage:hover{
+  font-weight: 600;
+}
+
+#navbarlogo{
+  border-radius: 25%;
+}
+
+.flashmessagestyle{
+  /*see @media queries*/
+}
+/*---------------------------------------------LANDING PAGE (SPLASH)--------------------------------------------------------*/
+.landingsplashpage{
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(backgroundlanding_resized3.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(backgroundlanding_resized3.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+.splashheader {
+  /*"z-index: 1" - refers to the layering of objects on the page, will layer above other objects*/
+  z-index: 1;
+  /*"position: relative; - default is static, if left it will ignore the z-index*/
+  position: relative;
+  /*text-align: center; - centers objects horizontally*/
+  text-align: center;
+  /*padding-top: 40vh; - centers objects vertically*/
+  padding-top: 30vh;
+}
+
+.splashheader h1 {
+  color: #fff;
+  text-shadow: 2px 2px 2px #000000;
+  margin-bottom: 5%;
+  /*font-size: see @media queries*/
+}
+
+.splashheader h2 {
+  color: #fff;
+  text-shadow: 2px 2px 2px #000000;
+  margin-bottom: 5%;
+  /*font-size: see @media queries*/
+}
+
+.splashheader a{
+  margin-top: 2%;
+}
+/*----------LANDING ABOUT------------*/
+.landingeducationpage {
+  /*padding: 2% 0 2% 0 ;*/
+  margin: 2% 0 5% 0 ;
+  text-align: center;
+}
+
+.landingeducationpageh1{
+  margin: 3% 0 3% 0;
+}
+
+.landingpageabouttext{
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  line-height: 200%;
+  padding: 0 10%;
+}
+
+.landingeducationtext{
+  padding-top: 2%;
+}
+
+.educationiconstyle{
+  font-size: 600%;
+  color: #337AB7;
+}
+
+.landingeducationtext h5{
+  padding-top: 5%;
+}
+
+.landingeducationtext p{
+  /*see @media queries*/
+}
+
+/*----------LANDING INTERESTS AND SKILLS----------*/
+.landingpageicons{
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.landingpageiconsheader{
+  margin: 5% 0 7% 0;
+}
+
+.landingpageicons i{
+  font-size: 600%;
+  color: #337AB7;
+}
+
+.landingpageicons h5{
+    font-size: 1rem;
+  /*see @media queries*/
+}
+
+
+
+/*--------------------------------------------------ABOUT PAGE-------------------------------------------------------------*/
+.aboutpage h1 {
+  text-align: center;
+  /*margin: see @media queries*/
+}
+
+.aboutpage img {
+  border-radius: 5%;
+  width: 80%;
+}
+
+.aboutintro{
+  padding: 2% 0 2% 0;
+}
+
+.aboutintrotext{
+  padding-top: 1.2%;
+  letter-spacing: 1px;
+  line-height: 140%;
+  font-size: 0.8rem;
+}
+
+.aboutcontent{
+  padding: 2% 0 2% 0;
+  text-align: center;
+}
+
+.aboutcontent h5, .aboutcontent h3{
+  margin-bottom: 3%;
+}
+
+.aboutcontent ul {
+  padding: 0 0 2% 0;
+  list-style: none;
+}
+.aboutcontent li {
+  margin: 7px 0;
+}
+
+.abouttext {
+  margin-top: 2%;
+}
+
+.abouttext li{
+  font-size: 0.9rem;
+}
+
+/*--------------------------------------------------------PROJECTS PAGE-------------------------------------------------------------------*/
+
+.projectsimagestyle {
+    /*padding-right:0;*/
+    /*padding-left:0;*/
+    /*padding: 3px;*/
+    transition: transform .2s;
+      position: relative;
+    z-index: 0;
+}
+.projectsimagestyle:hover {
+    transform: scale(1.02); 
+    z-index: 9999;
+    /*opacity: 0.9;*/
+}
+
+.projectstextstyle:hover{
+  background-color: #f4f4f4;
+}
+
+.projectspage h1{
+  text-align: center;
+  /*margin: see @media queries*/
+}
+
+.projectstextstyle{
+  font-size: 0.8rem;
+}
+
+.projectspage img{
+  width: 100%;
+}
+
+.projectspage h3{
+  margin-bottom: 3%;
+
+}
+
+.projectscontent{
+  margin-top: 2%;
+  
+}
+.projectscontent h3 {
+  text-align: center;
+  padding: 5% 0 0 0;
+}
+
+.projectscontent ul {
+  padding: 0 0 2% 0;
+}
+
+.projectscontent li{
+  list-style: none;
+  text-align: center;
+  margin: 10px 0;
+}
+
+
+.projectstext {
+  margin-top: 4%;
+}
+
+.projectsgithubicon{
+  font-size: 1.6rem;
+}
+
+/*--------------------------------------------------------BLOG PAGE--------------------------------------------------------*/
+/*------BLOGPOST INDEX---------*/
+.blogpostindexpage{
+  margin-top: 5vh;
+}
+
+.blogpostindexpage P{
+  font-size: 0.8rem !important;
+}
+
+.blogpostindexintro {
+  padding-bottom: 3%;
+  margin-bottom: 2%;
+}
+
+.blogpostindexintro h1{
+  text-align: left;
+  /*margin: see @media queries*/
+}
+
+.blogpostintrotext{
+  font-size: 1rem;
+}
+
+
+/*-----SHOW BLOGPOST-----------*/
+.showblogpostpage{
+  /*margin-top: 5%;*/
+  margin-top: 10vh;
+}
+
+.showblogpostpage p{
+  font-size: 0.8rem !important;
+}
+
+.showblogpostpage .container{
+  padding: 0 10% 5% 10%;
+}
+
+.showblogpostpage h2{
+  margin: 4% 0 2% 0;
+}
+
+.showblogpostpage img{
+  width: 100%;
+  padding: 1% 0 5% 0;
+}
+
+.showblogpostpage .delete-form{
+  display: inline;
+}
+
+.commentbuttons{
+  padding-bottom: 2%;
+}
+
+/*-----NEW/EDIT BLOGPOST-------*/
+.newblogpostpage, .editblogpostpage{
+  margin-top: 5%;
+  margin-bottom: 50vh;
+}
+.newblogpostpage .container, .editblogpostpage .container{
+  padding: 0 10% 0 10%;
+}
+
+.newblogpostpage h1, .editblogpostpage h1{
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.newblogpostpage .form-control, .editblogpostpage .form-control {
+  margin-top: 1%;
+}
+
+.newblogpostbuttons, .editblogpostbuttons{
+    display: inline;
+    margin-top: 2%;
+}
+
+/*-----NEW/EDIT COMMENT-------*/
+.newcommentpage, .editcommentpage{
+  margin: 10vh 0 70vh 0;
+}
+
+.newcommentpage .container .newcommentform, .editcommentpage .container .editcommentform  {
+  padding: 1% 25% 0 25%;
+}
+
+.newcommentpage h1, .editcommentpage h1 {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.newcommentbuttons, .editcommentbuttons {
+  margin-top: 5%;
+}
+
+/*--------------------------------------------------------CONTACT PAGE---------------------------------------------*/
+.contactpage {
+  margin-top: 10vh;
+  margin-bottom: 15vh;  
+}
+
+.contactpage a i{
+  color: #327AB7;
+}
+
+.contactpage a i:hover{
+  color: #4796d8;
+}
+
+.contactpage h1 {
+  margin-bottom: 1%;
+  text-align: center;
+  font-size: 300%;
+}
+
+.contacticons {
+  font-size: 650%;
+  margin: 5% 0 5% 0;
+  text-align: center;
+  color: #337AB7;
+}
+
+.contactdownload{
+  padding: 0 0 3% 25%;
+}
+
+.contactdownload a{
+  color: #337AB7;
+}
+.contactdownload i{
+  font-size: 550%;
+}
+
+.contactdownload h4{
+  padding-top: 7%;
+}
+.contactform {
+  padding: 1% 20% 0 20%;
+}
+
+/*--------------------------------------------------------LOGIN PAGE--------------------------------------------------------*/
+.loginpage{
+  padding: 5vh 0 70vh 0;
+  font-size: 110%;
+}
+
+.loginpage .container {
+  padding: 1% 20% 0 20%;
+}
+
+.loginpage h1{
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+/*-----------------------------------------------------REGISTER PAGE----------------------------------------------------------------*/
+.registerpage{
+  padding: 5vh 0 70vh 0;
+  font-size: 110%;
+}
+
+.registerpage .container {
+  padding: 1% 20% 0 20%;
+}
+
+.registerpage h1{
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+/*--------------------------------------------------------FOOTER-------------------------------------------------------------------*/
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /*background-color: #337AB7;*/
+  background-color: #4c4c4c;
+  height: 60px; /* Set the fixed height of the footer here */
+}
+
+.footer li{
+  font-size: 0.9rem;
+}
+/*--Footer Text--*/
+.footerleft{
+  float: left;
+  list-style: none;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.footerleft a{
+  padding-right: 12px;
+  text-decoration: none;
+  /*color: #add8e6;*/
+  color: #fff;
+}
+
+.footerleft a:hover{
+  color: #fff;
+  font-weight: 600;
+}
+/*--Footer Icons--*/
+.footerright {
+  float: right;
+  display: inline-block;
+  list-style: none;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+
+.footerright a{
+  /*color: #add8e6;*/
+  color: #fff;
+  padding-right: 10px;
+}
+
+.footerright a i{
+  font-size: 225%;
+}
+
+.footerright a i:hover{
+  color: #fff;
+  font-size: 250%;
+}
+
+
+/*------------------------------@Media Queries---------------------------------*/
+/*Extra small "col"*/
+@media only screen and (min-width: 0px) {
+  .navbar{
+    padding: 15px 15px 10px 15px;
+  }
+  .flashmessagestyle{
+    margin-top: 20%;
+  }
+  .logostyle, .fas.fa-bars{
+    font-size: 230%;
+  }h1
+  .landingsplashpage{
+    background-attachment: scroll;
+  }
+  .landingeducationtext p, .landingeducationtext h5{
+    text-align: center;
+  }
+  .landingpageicons h5{
+    padding: 10% 0 10% 0;
+  }
+  .splashheader h1 {
+    font-size: 500%;
+  }
+  .splashheader h2 {
+    font-size: 150%;
+  }
+  .aboutpage h1{
+    margin: 22% 0 4% 0;
+  }
+  .projectspage h1{
+    margin: 20% 0 4% 0;
+  }
+  .blogpostindexintro h1{
+    margin: 25% 0 4% 0;
+  }
+}
+
+/*Small "col-sm"*/
+@media only screen and (min-width: 576px) {
+  .navbar{
+    padding: 15px 15px 10px 15px;
+  }
+  .flashmessagestyle{
+    margin-top: 15%;
+  }
+  .logostyle, .fas.fa-bars{
+    font-size: 230%;
+  }
+  .landingsplashpage{
+    background-attachment: scroll;
+  }
+  .landingeducationtext p, .landingeducationtext h5{
+    text-align: center;
+  }
+  .landingpageicons h5{
+    padding: 10% 0 10% 0;
+  }
+  .splashheader h1 {
+    font-size: 500%;
+  }
+  .splashheader h2 {
+    font-size: 150%;
+  }
+  .aboutpage h1{
+    margin: 22% 0 4% 0;
+  }
+  .projectspage h1{
+    margin: 20% 0 4% 0;
+  }
+  .blogpostindexintro h1{
+    margin: 25% 0 4% 0;
+  }
+}
+
+/*Medium "col-md"*/
+@media only screen and (min-width: 768px) {
+  .navbar{
+    padding: 10px 15px 10px 15px;
+  }
+  .flashmessagestyle{
+    margin-top: 12%;
+  }
+  .logostyle, .fas.fa-bars{
+    font-size: 230%;
+  }
+  .landingsplashpage{
+    background-attachment: scroll;
+  }
+  .landingeducationtext p, .landingeducationtext h5{
+    text-align: center;
+  }
+  .landingpageicons h5{
+    padding: 20% 0 20% 0;
+  }
+  .splashheader h1 {
+    font-size: 700%;
+  }
+  .splashheader h2 {
+    font-size: 200%;
+  }
+  .aboutpage h1{
+    margin: 12% 0 4% 0;
+  }
+  .projectspage h1{
+    margin: 10% 0 4% 0;
+  }
+  .blogpostindexintro h1{
+    margin: 15% 0 4% 0;
+  }
+}
+
+/*Large "col-lg"*/
+@media only screen and (min-width: 992px) {
+  .navbar{
+    padding: 1px 15px 4px 15px;
+  }
+  .flashmessagestyle{
+    margin-top: 7%;
+  }
+  .logostyle, .fas.fa-bars{
+    font-size: 170%;
+  }
+  .landingsplashpage{
+    background-attachment: fixed;
+  }
+  .landingeducationtext p, .landingeducationtext h5{
+    text-align: center;
+  }
+  .landingpageicons h5{
+    padding: 20% 0 20% 0;
+  }
+  .splashheader h1 {
+    font-size: 750%;
+  }
+  .splashheader h2 {
+    font-size: 250%;
+  }
+  .aboutpage h1{
+    margin: 9% 0 4% 0;
+  }
+  .projectspage h1{
+    margin: 7% 0 4% 0;
+  }
+  .blogpostindexintro h1{
+    margin: 10% 0 4% 0;
+  }
+}
+
+
+/*Extra large "col-xl*/
+@media only screen and (min-width: 1200px) {
+  .navbar{
+    padding: 1px 15px 4px 15px;
+  }
+  .flashmessagestyle{
+    margin-top: 4%;
+  }
+  .logostyle, .fas.fa-bars{
+    font-size: 170%;
+  }
+  .landingsplashpage{
+    background-attachment: fixed;
+  }
+  .landingeducationtext p, .landingeducationtext h5{
+    text-align: center;
+  }
+  .landingpageicons h5{
+    padding: 20% 0 20% 0;
+  }
+  .splashheader h1 {
+    font-size: 800%;
+  }
+  .splashheader h2 {
+    font-size: 300%;
+  }
+  .aboutpage h1{
+    margin: 7% 0 2% 0;
+  }
+  .projectspage h1{
+    margin: 5% 0 2% 0;
+  }
+  .blogpostindexintro h1{
+    margin: 5% 0 4% 0;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

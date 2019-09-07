@@ -1,0 +1,36 @@
+<!--BLOGPOST EDIT-->
+<% include ../partials/header %>
+
+<section class="editblogpostpage">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h1>Edit post: <%= blogpost.name %></h1>
+            </div>
+        </div>
+        <form action="/blogposts/<%= blogpost._id %>?_method=PUT" method="POST">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <input class="form-control" type="text" name="blogpost[name]" value="<%= blogpost.name %>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <input class="form-control" type="text" name="blogpost[image]" value="<%= blogpost.image %>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <textarea  rows="10" col="50" class="form-control" type="text" name="blogpost[description]"><%= blogpost.description %></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 editblogpostbuttons">
+                    <button class="btn btn-md btn-primary">Submit!</button>
+                    <a class="btn btn-md btn-outline-primary" href="/blogposts/<%=blogpost._id%>" campground>Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<% include ../partials/footer %>

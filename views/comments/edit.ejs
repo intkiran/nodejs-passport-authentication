@@ -1,0 +1,29 @@
+<!--COMMENTS EDIT-->
+
+<% include ../partials/header %>
+
+<section class="editcommentpage">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h1>Edit Comment</h1>
+            </div>
+        </div>
+        <form class="editcommentform" action="/blogposts/<%= blogpost_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <!--"comment.text needs to be inbetween the <textarea> tags inorder for it to display when editing-->
+                    <textarea rows="10" col="50" class="form-control" type="text" name="comment[text]"><%= comment.text %></textarea>
+                </div>
+            </div>
+            <div class="row commentbuttons">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <button class="btn btn-md btn-primary">Submit!</button>
+                    <a class="btn btn-md btn-outline-primary" href="/blogposts/<%=blogpost_id%>">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<% include ../partials/footer %>

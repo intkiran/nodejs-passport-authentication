@@ -1,0 +1,39 @@
+<% include partials/header %> <% var msg %>
+
+<div class="contactpage">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <h1 class="animate-wp-17">Invite user</h1>
+        <div class="headerunderline animate-wp-16"></div>
+      </div>
+    </div>
+
+    <!--</div>-->
+    <div class="row contactform">
+      <form method="post" action="send">
+        <div class="form-group">
+          <input
+            type="text"
+            name="contactname"
+            class="form-control"
+            placeholder="Name"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Email"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>

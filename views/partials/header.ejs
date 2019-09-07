@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog App</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" />
+    <!--Favicon tab icon-->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/stylesheets/icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/stylesheets/icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/stylesheets/icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/stylesheets/icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/stylesheets/icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/stylesheets/icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/stylesheets/icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/stylesheets/icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/stylesheets/icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/stylesheets/icons/png"
+      sizes="192x192"
+      href="/stylesheets/icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/stylesheets/icons/png"
+      sizes="32x32"
+      href="/stylesheets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/stylesheets/icons/png"
+      sizes="96x96"
+      href="/stylesheets/icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/stylesheets/icons/png"
+      sizes="16x16"
+      href="/stylesheets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/stylesheets/icons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="/stylesheets/icons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-toggleable-md fixed-top navbarcolored">
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+        <a class="navbar-brand" href="/"
+          ><i class="fas fa-code-branch logostyle"></i
+        ></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbarmargin">
+            <li class="nav-item">
+              <a class="nav-link" href="/invitefriends">Invite Friends</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blogposts">Blog</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbariconstyle" id="navbarSupportedContent">
+            <% if(!currentUser){ %>
+            <li class="nav-item">
+              <a class="nav-link" href="/login"
+                ><i class="fa fa-user"></i>Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register"
+                ><i class="fa fa-user-plus"></i>Sign Up</a
+              >
+            </li>
+            <% } else { %>
+            <li class="nav-link" id="welcomemessage">
+              <a class="nav-link" href="#"> Welcome <%= currentUser.name %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout"
+                ><i class="fa fa-sign-out"></i>Sign out</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <br />
+    <br />
+    <div class="container">
+      <div class="row">
+        <% if(error && error.length > 0){ %>
+        <div class="container flashmessagestyle">
+          <div class="alert alert-danger" role="alert">
+            <%= error %>
+          </div>
+          <% }%>
+        </div>
+        <% if(success && success.length > 0){ %>
+        <div class="container flashmessagestyle">
+          <div class="alert alert-success" role="alert">
+            <%= success %>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
