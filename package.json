@@ -17,7 +17,7 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
-    "mongoose": "^4.11.13",
+    "mongoose": "^5.7.8",
     "nodejs-simple-uuid": "^1.0.0",
     "nodemailer": "^4.4.0",
     "passport": "^0.4.0",
