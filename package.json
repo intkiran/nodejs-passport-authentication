@@ -10,11 +10,11 @@
   "author": "Kiran Babu",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.20.1",
     "connect-flash": "^0.1.1",
     "dotenv": "^7.0.0",
     "ejs": "^2.5.7",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
     "mongoose": "^4.11.13",
